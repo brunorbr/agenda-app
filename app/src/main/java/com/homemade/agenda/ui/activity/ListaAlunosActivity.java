@@ -13,6 +13,7 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.homemade.agenda.R;
 import com.homemade.agenda.dao.AlunoDAO;
@@ -38,6 +39,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
         configuraLista();
         dao.salva(new Aluno("Ana Furtado", "5199999999", "tapei@buraco.co"));
         dao.salva(new Aluno("Luciano Huck", "5199991111", "marido@angeli.ca"));
+
     }
 
     @Override
@@ -49,8 +51,8 @@ public class ListaAlunosActivity extends AppCompatActivity {
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
-       int itemId = item.getItemId();
-       if(itemId == R.id.activity_lista_alunos_menu_remover) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.activity_lista_alunos_menu_remover) {
             AdapterView.AdapterContextMenuInfo menuInfo =
                     (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
             Aluno alunoSelecionado = adapter.getItem(menuInfo.position);
